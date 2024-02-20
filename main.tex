@@ -1,0 +1,76 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\renewcommand{\baselinestretch}{1.5}
+
+\usepackage{ragged2e}
+\usepackage{csquotes}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[
+  math-style = ISO,
+  warnings-off = {mathtools-colon},
+]{unicode-math}
+% \usepackage{IEEEeqnarray}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{xfrac}
+\usepackage{blindtext}
+\usepackage{esdiff} % for writing derivatives
+\usepackage{physics} % better derivative writings
+\usepackage{tikz}
+% \usepackage{pst-plot}
+\usepackage{pgfplots}
+\usepackage{nccmath}
+\usepackage{changepage}
+% \usepackage{esvect}
+
+\usepackage[
+backend=bibtex,
+style=mla,
+sorting=nyt,
+ibidtracker=false
+]{biblatex}
+\usepackage{url}
+
+% https://pgf-tikz.github.io/pgf/pgfmanual.pdf
+\pgfplotsset{compat=1.18}
+
+\DeclareMathOperator{\sgn}{sgn}
+\NewDocumentCommand{\vter}{}{v_{\text{ter}}}
+\NewDocumentCommand{\e}{}{\symrm{e}}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+% \usepackage[pdfpagelabels]{hyperref}
+% \hypersetup{
+%   colorlinks=false,
+%   % citebordercolor=1 1 1,
+%   % filebordercolor=1 1 1,      
+%   % linkbordercolor=1 1 1,
+%   % menubordercolor=1 1 1,
+%   % urlbordercolor=1 1 1,
+%   breaklinks=true,
+%   pdfborder=0 0 0 [0 0],
+% }
+
+\parskip=10pt
+
+\addbibresource{main.bib}
+
+\setkomafont{disposition}{\normalfont\bfseries}
+
+\begin{document}
+
+\tableofcontents
+
+\thispagestyle{empty}
+
+\newpage
+
+\end{document}
