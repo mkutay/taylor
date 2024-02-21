@@ -78,4 +78,42 @@
   \end{equation*}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Derivation}
+  \begin{itemize}
+    \item We want to approximate \textit{near} \( x = 0 \)
+    \item \( \cos x = a + bx + cx^2 \) at \( x = 0 \)
+  \end{itemize}
+  \begin{align*}
+    \cos 0 &= a + b \cdot 0 + c \cdot 0^2 \\
+    1 &= a
+  \end{align*}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[
+      scale=0.14
+    ]{images/first.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[
+      scale=0.11
+    ]{images/second.png}
+  \end{figure}
+  \begin{itemize}
+    \item The green function is better, but why?
+    \item The rate of change is the same as \( \cos x \) at \( x = 0 \)
+    \item Our approximation must have the same derivative at \( x = 0 \)
+    \item \( \cos' x = -\sin x \) and \( (a + bx + cx^2)' = b + 2cx \)
+  \end{itemize}
+  \begin{align*}
+    -\sin 0 = 0 &= b + 2c \cdot 0 \\
+    b &= 0
+  \end{align*}
+\end{frame}
+
 \end{document}
