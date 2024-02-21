@@ -4,10 +4,11 @@
 
 \usepackage{physics} % better derivative writings
 \usepackage{unicode-math}
+\usepackage{ulem}
 
 \NewDocumentCommand{\e}{}{\symrm{e}}
 
-\title{Maclaurin Series}
+\title{Taylor \sout{Swift} Series (Maclaurin Series)}
 \author{Kutay}
 \institute{Made with LaTeX}
 \date{\today}
@@ -108,7 +109,7 @@
     \item The green function is better, but why?
     \item The rate of change is the same as \( \cos x \) at \( x = 0 \)
     \item Our approximation must have the same derivative at \( x = 0 \)
-    \item \( \cos' x = -\sin x \) and \( (a + bx + cx^2)' = b + 2cx \)
+    \item \( \cos'(x) = -\sin x \) and \( (a + bx + cx^2)' = b + 2cx \)
   \end{itemize}
   \begin{align*}
     -\sin 0 = 0 &= b + 2c \cdot 0 \\
@@ -131,9 +132,66 @@
     \item Same second derivative will ensure that they curve at the same rate
   \end{itemize}
   \begin{align*}
-    \cos'' x &= -\cos x \\
+    \cos''(x) &= -\cos x \\
     (a + bx + cx^2)'' &= 2c
   \end{align*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation}
+  \begin{itemize}
+    \item \( \cos''(x) = -\cos x \), and \( (a + bx + cx^2)'' = 2c \)
+  \end{itemize}
+  \begin{align*}
+    -\cos 0 &= 2c \\
+    -1 &= 2c \\
+    c &= -\frac{1}{2} \\
+    \cos x &\approx 1 - \frac{1}{2}x^2
+  \end{align*}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[
+      scale=0.115
+    ]{images/approx.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation}
+  \begin{itemize}
+    \item Okay, but how \textit{good} is our approximation?
+    \item For \( x = 0.1 \), \( \cos x = 0.99500417 \), and our approximation, \( 1 - \frac{1}{2}x^2 = 0.995 \)
+    \item For \( x = 0.25 \), \( \cos x = 0.9689124 \), and our approximation, \( 1 - \frac{1}{2}x^2 = 0.96875 \)
+  \end{itemize}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[
+      scale=0.16
+    ]{images/big.png}
+  \end{figure}
+\end{frame}
+
+\section{The More the Merrier}
+
+\begin{frame}
+  \frametitle{The More the Merrier}
+  \begin{itemize}
+    \item But why stop at \( x^2 \)? Why not go further?
+    \item In fact, we can
+    \item More terms will give us more \textit{control} over the approximation
+    \item Let us add another term \( dx^3 \) to our approximation
+  \end{itemize}
+  \begin{equation*}
+    \cos x \approx 1 - \frac{1}{2}x^2 + dx^3
+  \end{equation*}
+  \begin{itemize}
+    \item Taking the third derivative of a polynomial, all the terms that has a power less than 3 will vanish
+    \item And, \( \cos'''(x) = \cos x \)
+    \item For our new term, each derivative will change its coefficient
+  \end{itemize}
+  \begin{equation*}
+    \cos x = (-x + 3dx^2)'' = (-1 + 2 \cdot 3dx)' = 1 \cdot 2 \cdot 3 \cdot d
+  \end{equation*}
 \end{frame}
 
 \end{document}
