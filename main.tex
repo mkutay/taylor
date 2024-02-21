@@ -331,7 +331,7 @@
     \item We can approximate \( f(x) \) near \( x = 0 \) with any degree of accuracy we want
   \end{itemize}
   \begin{equation*}
-    P(x) = f(0) + f'(0)\frac{x}{1} + f''(0)\frac{x^2}{2!} + f'''(0)\frac{x^3}{3!} + \cdots
+    P(x) = f(0) + f'(0)\frac{x}{1} + f''(0)\frac{x^2}{2!} + f'''(0)\frac{x^3}{3!} + \cdots = \sum_{n = 0}^{\infty} \frac{f^{(n)}(0)x^n}{n!}
   \end{equation*}
   \begin{itemize}
     \item This is called the \textit{Maclaurin Series} of \( f(x) \)
@@ -353,6 +353,18 @@
       scale=0.145
     ]{images/ex.png}
   \end{figure}
+\end{frame} % another thing to notice is that this actually approximates e, plug in x = 1, you would get an approximation of e
+
+\section{One More Thing}
+
+\begin{frame}
+  \frametitle{One More Thing}
+  \begin{itemize}
+    \item We can, in fact, use this knowledge to prove what we kind of assumed before
+  \end{itemize}
+  \begin{equation*}
+    \cos \theta + i\sin \theta = \e^{i\theta}
+  \end{equation*}
 \end{frame}
 
 \end{document}
