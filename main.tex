@@ -7,13 +7,14 @@
 \usepackage{ulem}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 \NewDocumentCommand{\e}{}{\symrm{e}}
 \DeclareMathOperator\cis{cis}
 
 \title{Taylor \sout{Swift} Series (Maclaurin Series)}
 \author{M. Kutay}
-\institute{Made with LaTeX}
+\institute{Made with \LaTeX}
 \date{\today}
 
 % \parskip=10pt
@@ -368,13 +369,13 @@
   \end{align*}
 \end{frame}
 
-\section{Example}
+\section{Example 1}
 
 \begin{frame}
-  \frametitle{Example}
+  \frametitle{Example 1}
   \begin{itemize}
     \item Find the Maclaurin series of the function \( f(x) = \e^x\sin x \) up to the term \( x^3 \)
-    \item Two methods: multiply series expansions of \( \e^x \) and \( \sin x \), or rigor
+    \item Two methods: multiply series expansions of \( \e^x \) and \( \sin x \), or rigour
   \end{itemize}
   \begin{align*}
     f(x) & = \e^x\sin x \\
@@ -388,6 +389,29 @@
   \begin{align*}
     f(x) & = 0 + 1x + \frac{2x^2}{2!} + \frac{2x^3}{3!} \\
     & = x + x^2 + \frac{x^3}{3}
+  \end{align*}
+\end{frame}
+
+\section{Example 2}
+
+\begin{frame}
+  \frametitle{Example 2}
+  \begin{itemize}
+    \item Find the Maclaurin series of the function \( f(x) = (1 + x)^p \) for \( p \in \mathbb{R} \)
+  \end{itemize}
+  \begin{align*}
+    f(x) & = (1 + x)^p; f(0) = 1 \\
+    f'(x) & = p(1 + x)^{p - 1}; f'(0) = p \\
+    f''(x) & = p(p - 1) (1 + x)^{p - 2}; f''(0) = p(p - 1) \\
+    % f'''(x) & = p(p - 1)(p - 2)(1 + x)^{p - 3}; f'''(0) = p(p - 1)(p - 2) \\
+    & \vdots \\
+    f^{(n)}(x) & = p(p - 1)(p - 2) \cdots (p - n + 1) (1 + x)^{p - n}; \\
+    f^{(n)}(0) & = p(p - 1)(p - 2) \cdots (p - n + 1)
+  \end{align*}
+  \begin{align*}
+    P(x) & = 1 + px + \frac{p(p - 1)x^2}{2!} + \frac{p(p - 1)(p - 2)x^3}{3!} + \cdots \\
+    & = \sum_{n = 0}^{\infty} \frac{p(p - 1)(p - 2) \cdots (p - n + 1)x^n}{n!} \\
+    & = \sum_{n = 0}^{\infty} \binom{p}{n} x^n
   \end{align*}
 \end{frame}
 
